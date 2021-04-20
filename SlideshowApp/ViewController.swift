@@ -10,8 +10,10 @@ import UIKit
 class ViewController: UIViewController {
 
     //アウトレット接続
+    @IBOutlet weak var prevButton: UIButton! //戻るボタン
+    @IBOutlet weak var nextButton: UIButton! //進むボタン
     @IBOutlet weak var slideImage: UIImageView! //スライド画像表示部分
-    @IBOutlet weak var autoPlay: UIButton! //自動再生・停止ボタン
+    @IBOutlet weak var autoPlayButton: UIButton! //再生ボタン
     
     //タイマーを宣言
     var timer: Timer!
@@ -21,9 +23,9 @@ class ViewController: UIViewController {
     
     //スライドショーさせる画像配列
     var imageArray:[UIImage] = [
-        UIImage(named: "apple.jpg")!,
-        UIImage(named: "banana.jpg")!,
-        UIImage(named: "orange.jpg")!
+        UIImage(named: "apple")!,
+        UIImage(named: "banana")!,
+        UIImage(named: "orange")!
     ]
 
     
@@ -33,28 +35,85 @@ class ViewController: UIViewController {
         
     }
 
-    @IBAction func autoPlayButton(_sender: Any){
-        if(timer == nil) {
+    
+    //自動再生・停止
+    
+    @IBAction func autoPlayButtonDo(_ sender: Any) {
         
+        if self.timer == nil {
             //タイマーがnil（動いてない）なら再生
-            timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(imageSlider), userInfo: nil , repeats: true)
-        
+            self.timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(imageSliderNext), userInfo: nil , repeats: true)
+            // ボタンタイトルを停止に変更
+            autoPlayButton.setTitle("停止", for: .normal)
+            //進むボタン無効化
+            nextButton.isEnabled = false
+            //戻るボタン無効化
+            prevButton.isEnabled = false
+        } else {
+            //タイマーが動いていたら停止
+            self.timer.invalidate()
+            //タイマーをリセット
+            self.timer = nil
+            // ボタンタイトルを再生に変更
+            autoPlayButton.setTitle("再生", for: .normal)
+            //進むボタン有効化
+            nextButton.isEnabled = true
+            //戻るボタン有効化
+            prevButton.isEnabled = true
+            
         }
     }
     
-    //selector指定で揖斐出す関数
-    @objc func imageSlider(){
+    //進むボタン
+    @IBAction func nextButtonDo(_ sender: Any) {
+        if self.timer == nil {
+            //タイマーが動いてないなら
+            imageSliderNext()
+        }
+    }
+    
+    //戻るボタン
+    @IBAction func prevButtonDo(_ sender: Any) {
+        if self.timer == nil {
+            //タイマーが動いてないなら
+            imageSliderPrev()
+        }
+    }
+    
+    //スライダー画像を1つ進ませる関数（自動再生selector指定で呼び出す）
+    @objc func imageSliderNext(){
         //カウントを1増やす
          currentIndex += 1
         
         if (currentIndex == imageArray.count){
-        //ナンバリングをリセット
+        //ナンバリングをリセットする
             currentIndex = 0
-    }
+        }
         //画像セット
         slideImage.image = imageArray[currentIndex]
     }
     
+    //スライダー画像を1つ戻らせる関数
+    @objc func imageSliderPrev(){
+        
+        if (currentIndex == 0){
+        //画像が最初の画像だったら、ナンバリングを最大値にする
+            currentIndex = imageArray.count
+        }
+        //カウントを1減らす
+         currentIndex -= 1
+        //画像セット
+        slideImage.image = imageArray[currentIndex]
+    }
     
+    //TapGestureRecognizerでスライド画像をタップ
+    @IBAction func slideTap(_ sender: Any) {
+        
+    }
+    
+    //戻る
+    @IBAction func unwind(_ segue: UIStoryboardSegue){
+        
+    }
 }
 

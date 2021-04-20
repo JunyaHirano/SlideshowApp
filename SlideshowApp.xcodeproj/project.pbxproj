@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C9A07E15262ED6700091AEDA /* ZoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A07E14262ED6700091AEDA /* ZoomViewController.swift */; };
 		C9B441B926298F65005F2E68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B441B826298F65005F2E68 /* AppDelegate.swift */; };
 		C9B441BB26298F65005F2E68 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B441BA26298F65005F2E68 /* SceneDelegate.swift */; };
 		C9B441BD26298F65005F2E68 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B441BC26298F65005F2E68 /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C9A07E14262ED6700091AEDA /* ZoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomViewController.swift; sourceTree = "<group>"; };
 		C9B441B526298F65005F2E68 /* SlideshowApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlideshowApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B441B826298F65005F2E68 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9B441BA26298F65005F2E68 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,14 +64,15 @@
 		C9B441B726298F65005F2E68 /* SlideshowApp */ = {
 			isa = PBXGroup;
 			children = (
-				C9F0D209262DF3C70045E932 /* apple.jpg */,
-				C9F0D216262DF40D0045E932 /* orange.jpg */,
-				C9F0D20C262DF3D30045E932 /* banana.jpg */,
 				C9B441B826298F65005F2E68 /* AppDelegate.swift */,
 				C9B441BA26298F65005F2E68 /* SceneDelegate.swift */,
 				C9B441BC26298F65005F2E68 /* ViewController.swift */,
+				C9A07E14262ED6700091AEDA /* ZoomViewController.swift */,
 				C9B441BE26298F65005F2E68 /* Main.storyboard */,
 				C9B441C126298F66005F2E68 /* Assets.xcassets */,
+				C9F0D209262DF3C70045E932 /* apple.jpg */,
+				C9F0D216262DF40D0045E932 /* orange.jpg */,
+				C9F0D20C262DF3D30045E932 /* banana.jpg */,
 				C9B441C326298F66005F2E68 /* LaunchScreen.storyboard */,
 				C9B441C626298F66005F2E68 /* Info.plist */,
 			);
@@ -150,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9B441BD26298F65005F2E68 /* ViewController.swift in Sources */,
+				C9A07E15262ED6700091AEDA /* ZoomViewController.swift in Sources */,
 				C9B441B926298F65005F2E68 /* AppDelegate.swift in Sources */,
 				C9B441BB26298F65005F2E68 /* SceneDelegate.swift in Sources */,
 			);
