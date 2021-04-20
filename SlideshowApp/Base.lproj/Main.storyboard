@@ -128,6 +128,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1Nt-2X-wsY"/>
+                    <connections>
+                        <outlet property="zoomImage" destination="r6J-Uz-7GN" id="E3p-ts-BMM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DhE-Iu-gT3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="UWM-3O-QbK" userLabel="Exit" sceneMemberID="exit"/>

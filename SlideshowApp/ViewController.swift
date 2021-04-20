@@ -115,5 +115,12 @@ class ViewController: UIViewController {
     @IBAction func unwind(_ segue: UIStoryboardSegue){
         
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let ZoomViewController:ZoomViewController = segue.destination as! ZoomViewController
+        //ZoomViewControllerで定義した変数zoomImageNumberにimageの値を渡す
+        ZoomViewController.zoomImageNumber = imageArray[currentIndex]
+    }
 }
 
