@@ -23,9 +23,9 @@ class ViewController: UIViewController {
     
     //スライドショーさせる画像配列
     var imageArray:[UIImage] = [
-        UIImage(named: "apple")!,
-        UIImage(named: "banana")!,
-        UIImage(named: "orange")!
+        UIImage(named: "apple.jpg")!,
+        UIImage(named: "banana.jpg")!,
+        UIImage(named: "orange.jpg")!
     ]
 
     
@@ -36,13 +36,27 @@ class ViewController: UIViewController {
     }
 
     
-    //自動再生・停止
     
+    @objc func stopTimer(_timer: Timer) {
+        //タイマーが動いていたら停止
+        self.timer.invalidate()
+        //タイマーをリセット
+        self.timer = nil
+        // ボタンタイトルを再生に変更
+        autoPlayButton.setTitle("再生", for: .normal)
+        //進むボタン有効化
+        nextButton.isEnabled = true
+        //戻るボタン有効化
+        prevButton.isEnabled = true
+        
+    }
+    
+    //自動再生・停止
     @IBAction func autoPlayButtonDo(_ sender: Any) {
         
         if self.timer == nil {
             //タイマーがnil（動いてない）なら再生
-            self.timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(imageSliderNext), userInfo: nil , repeats: true)
+            self.timer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(imageSliderNext), userInfo: nil , repeats: true)
             // ボタンタイトルを停止に変更
             autoPlayButton.setTitle("停止", for: .normal)
             //進むボタン無効化
@@ -50,19 +64,10 @@ class ViewController: UIViewController {
             //戻るボタン無効化
             prevButton.isEnabled = false
         } else {
-            //タイマーが動いていたら停止
-            self.timer.invalidate()
-            //タイマーをリセット
-            self.timer = nil
-            // ボタンタイトルを再生に変更
-            autoPlayButton.setTitle("再生", for: .normal)
-            //進むボタン有効化
-            nextButton.isEnabled = true
-            //戻るボタン有効化
-            prevButton.isEnabled = true
-            
+            stopTimer()
         }
     }
+    
     
     //進むボタン
     @IBAction func nextButtonDo(_ sender: Any) {
@@ -106,14 +111,20 @@ class ViewController: UIViewController {
         slideImage.image = imageArray[currentIndex]
     }
     
+    
+    @IBOutlet var slideTap1: UITapGestureRecognizer!
     //TapGestureRecognizerでスライド画像をタップ
     @IBAction func slideTap(_ sender: Any) {
-        
+        if self.timer != nil {
+        //タイマーが動いていたら停止
+        self.timer.invalidate()
+        //タイマーをリセット
+        self.timer = nil
+        }
     }
     
     //戻る
     @IBAction func unwind(_ segue: UIStoryboardSegue){
-        
     }
     
     

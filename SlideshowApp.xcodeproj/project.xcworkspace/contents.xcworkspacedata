@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/ds_jh/_TA/SlideshowApp/SlideshowApp/orange.jpg">
+   </FileRef>
+   <FileRef
       location = "self:">
    </FileRef>
 </Workspace>

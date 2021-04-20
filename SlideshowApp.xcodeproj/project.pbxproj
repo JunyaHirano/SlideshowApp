@@ -16,10 +16,10 @@
 		C9B441C526298F66005F2E68 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9B441C326298F66005F2E68 /* LaunchScreen.storyboard */; };
 		C9F0D20A262DF3C70045E932 /* apple.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C9F0D209262DF3C70045E932 /* apple.jpg */; };
 		C9F0D20E262DF3D30045E932 /* banana.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C9F0D20C262DF3D30045E932 /* banana.jpg */; };
-		C9F0D217262DF40D0045E932 /* orange.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C9F0D216262DF40D0045E932 /* orange.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C956593D262F0892006B8BA2 /* orange.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = orange.jpg; sourceTree = "<group>"; };
 		C9A07E14262ED6700091AEDA /* ZoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomViewController.swift; sourceTree = "<group>"; };
 		C9B441B526298F65005F2E68 /* SlideshowApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlideshowApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B441B826298F65005F2E68 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -31,7 +31,6 @@
 		C9B441C626298F66005F2E68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9F0D209262DF3C70045E932 /* apple.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = apple.jpg; sourceTree = "<group>"; };
 		C9F0D20C262DF3D30045E932 /* banana.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = banana.jpg; sourceTree = "<group>"; };
-		C9F0D216262DF40D0045E932 /* orange.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = orange.jpg; path = "../../../Dropbox (個人用)/作業フォルダ/DropBoxダウンロード/20210420022127__illust/orange.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,8 +69,8 @@
 				C9A07E14262ED6700091AEDA /* ZoomViewController.swift */,
 				C9B441BE26298F65005F2E68 /* Main.storyboard */,
 				C9B441C126298F66005F2E68 /* Assets.xcassets */,
+				C956593D262F0892006B8BA2 /* orange.jpg */,
 				C9F0D209262DF3C70045E932 /* apple.jpg */,
-				C9F0D216262DF40D0045E932 /* orange.jpg */,
 				C9F0D20C262DF3D30045E932 /* banana.jpg */,
 				C9B441C326298F66005F2E68 /* LaunchScreen.storyboard */,
 				C9B441C626298F66005F2E68 /* Info.plist */,
@@ -137,7 +136,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9B441C526298F66005F2E68 /* LaunchScreen.storyboard in Resources */,
-				C9F0D217262DF40D0045E932 /* orange.jpg in Resources */,
 				C9B441C226298F66005F2E68 /* Assets.xcassets in Resources */,
 				C9F0D20A262DF3C70045E932 /* apple.jpg in Resources */,
 				C9B441C026298F65005F2E68 /* Main.storyboard in Resources */,
