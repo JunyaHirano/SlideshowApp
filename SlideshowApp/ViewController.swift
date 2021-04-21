@@ -36,8 +36,28 @@ class ViewController: UIViewController {
     }
 
     
+    //自動再生・停止
+    @IBAction func autoPlayButtonDo(_ sender: Any) {
+        
+        if self.timer == nil {
+            //タイマーがnil（動いてない）なら再生
+            self.timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(imageSliderNext), userInfo: nil , repeats: true)
+            // ボタンタイトルを停止に変更
+            autoPlayButton.setTitle("停止", for: .normal)
+            //進むボタン無効化
+            nextButton.isEnabled = false
+            //戻るボタン無効化
+            prevButton.isEnabled = false
+        } else {
+            //タイマー停止関数
+            stopTimer()
+        }
+    }
     
-    @objc func stopTimer(_timer: Timer) {
+    //タイマー停止 関数
+    @objc func stopTimer() {
+
+        if self.timer != nil {
         //タイマーが動いていたら停止
         self.timer.invalidate()
         //タイマーをリセット
@@ -48,27 +68,9 @@ class ViewController: UIViewController {
         nextButton.isEnabled = true
         //戻るボタン有効化
         prevButton.isEnabled = true
-        
-    }
-    
-    //自動再生・停止
-    @IBAction func autoPlayButtonDo(_ sender: Any) {
-        
-        if self.timer == nil {
-            //タイマーがnil（動いてない）なら再生
-            self.timer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(imageSliderNext), userInfo: nil , repeats: true)
-            // ボタンタイトルを停止に変更
-            autoPlayButton.setTitle("停止", for: .normal)
-            //進むボタン無効化
-            nextButton.isEnabled = false
-            //戻るボタン無効化
-            prevButton.isEnabled = false
-        } else {
-            stopTimer()
         }
+        
     }
-    
-    
     //進むボタン
     @IBAction func nextButtonDo(_ sender: Any) {
         if self.timer == nil {
@@ -112,23 +114,14 @@ class ViewController: UIViewController {
     }
     
     
-    @IBOutlet var slideTap1: UITapGestureRecognizer!
-    //TapGestureRecognizerでスライド画像をタップ
-    @IBAction func slideTap(_ sender: Any) {
-        if self.timer != nil {
-        //タイマーが動いていたら停止
-        self.timer.invalidate()
-        //タイマーをリセット
-        self.timer = nil
-        }
-    }
-    
-    //戻る
+    //ZoomViewControllerの「戻る」ボタン
     @IBAction func unwind(_ segue: UIStoryboardSegue){
     }
-    
-    
+
+    //TapGestureRecognizerでスライド画像をタップしたときにshowでZoomViewControllerへ移動
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //タイマーを停止する
+        stopTimer()
         let ZoomViewController:ZoomViewController = segue.destination as! ZoomViewController
         //ZoomViewControllerで定義した変数zoomImageNumberにimageの値を渡す
         ZoomViewController.zoomImageNumber = imageArray[currentIndex]

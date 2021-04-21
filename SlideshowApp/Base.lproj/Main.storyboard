@@ -81,14 +81,12 @@
                         <outlet property="nextButton" destination="WkN-JZ-AtL" id="iSJ-HR-ST7"/>
                         <outlet property="prevButton" destination="oEp-X9-BcM" id="8OZ-C3-K5v"/>
                         <outlet property="slideImage" destination="QEH-gt-FDv" id="o4j-ja-QZ2"/>
-                        <outlet property="slideTap1" destination="H0g-Ku-sLD" id="kn8-uc-mbD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="H0g-Ku-sLD">
                     <connections>
-                        <action selector="slideTap:" destination="BYZ-38-t0r" id="UpO-VG-7aH"/>
-                        <segue destination="aQf-xk-TVr" kind="show" id="zcP-79-bWL"/>
+                        <segue destination="aQf-xk-TVr" kind="show" id="dj0-R8-C8o"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
